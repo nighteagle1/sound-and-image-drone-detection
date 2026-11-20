@@ -153,3 +153,11 @@ def test_vision_with_video_file_publishes_events_and_jpeg(client, tmp_path):
 def test_threshold_roundtrip_and_validation(client):
     assert client.post("/api/threshold", json={"value": 0.7}).status_code == 200
     assert client.post("/api/threshold", json={"value": 7}).status_code == 400
+
+
+def test_index_served(client):
+    r = client.get("/")
+    assert r.status_code == 200
+    assert "Звук" in r.text and "Изображение" in r.text
+    assert client.get("/app.js").status_code == 200
+    assert client.get("/style.css").status_code == 200

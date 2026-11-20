@@ -13,6 +13,7 @@ from typing import Literal, Optional
 from fastapi import FastAPI, File, Request, UploadFile
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .audio.sources import list_microphones
@@ -21,6 +22,7 @@ from .errors import DroneError
 from .session import ConflictError, DetectionSession, EventHub
 from .vision.sources import list_cameras
 
+STATIC_DIR = Path(__file__).parent / "static"
 MAX_UPLOAD_BYTES = 200 * 1024 * 1024
 
 
@@ -174,4 +176,5 @@ def create_app(config: AppConfig | None = None) -> FastAPI:
 
         return StreamingResponse(gen(), media_type="multipart/x-mixed-replace; boundary=frame")
 
+    app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
     return app
