@@ -1,0 +1,5 @@
+audio_model: models/drone_audio.onnx
+vision_model: models/drone_yolov5.onnx
+audio_threshold: 0.5
+vision_threshold: 0.25
+port: 8000
