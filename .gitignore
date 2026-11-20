@@ -3,3 +3,4 @@ __pycache__/
 uploads/
 .superpowers/
 .pytest_cache/
+tools/kaggle_export/out/

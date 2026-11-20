@@ -1,0 +1,13 @@
+{
+  "id": "alekstop/drone-audio-onnx-export",
+  "title": "drone-audio-onnx-export",
+  "code_file": "export_audio.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}
