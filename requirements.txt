@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+onnxruntime
+numpy
+scipy
+opencv-python-headless
+sounddevice
+soundfile
+pyyaml
+python-multipart
